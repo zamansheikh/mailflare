@@ -26,6 +26,7 @@ import { useDashboardState } from "./dashboard-state";
 import { useAssistantAvailability } from "./use-assistant-availability";
 import { RouteTitle } from "@/components/route-title";
 import { useAppBadge } from "@/hooks/use-app-badge";
+import { UndoToasts } from "@/components/messages/undo-toasts";
 
 export default function DashboardLayout({
   children,
@@ -91,6 +92,7 @@ export default function DashboardLayout({
                     </div>
                   </div>
                   <FloatingComposer showButton />
+                  <UndoToasts />
                 </div>
               </ShortcutsProvider>
             </MailSearchProvider>
