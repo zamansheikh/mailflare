@@ -5,7 +5,7 @@
 Please don't report security vulnerabilities in public issues or pull requests. Report
 them privately on GitHub instead: open the **Security** tab and choose
 **Report a vulnerability**, or go to
-<https://github.com/hieunc229/mailflare/security/advisories/new>.
+<https://github.com/zamansheikh/mailflare/security/advisories/new>.
 
 Include as much of this as you can:
 
@@ -23,7 +23,7 @@ be published with credit to you, unless you'd rather stay anonymous.
 Mailflare is self-hosted and released from `main`. Security fixes only go into the latest
 version, so keep your installation up to date with **Update Mailflare** in the admin
 dashboard or by redeploying. See
-[Updating Mailflare](https://github.com/hieunc229/mailflare/blob/main/docs/deployment.md#updating-mailflare).
+[Updating Mailflare](https://github.com/zamansheikh/mailflare/blob/main/docs/deployment.md#updating-mailflare).
 
 ## Scope
 
@@ -36,5 +36,5 @@ Out of scope:
   the provider
 * spam or phishing that reaches an inbox without exploiting a bug; open a normal issue
 * behaviour documented as a design choice in
-  [Security notes for inbound mail](https://github.com/hieunc229/mailflare/blob/main/docs/security.md),
+  [Security notes for inbound mail](https://github.com/zamansheikh/mailflare/blob/main/docs/security.md),
   such as attachments not being scanned by an antivirus engine

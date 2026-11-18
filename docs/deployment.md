@@ -35,7 +35,7 @@ Paste only the token secret into the `CF_TOKEN` field in step 2. Do not include 
 
 1. Click **Deploy to Cloudflare** and sign in to Cloudflare if prompted.
 
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/hieunc229/mailflare)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/zamansheikh/mailflare)
 
 2. Choose the Cloudflare account that owns the domain you want to use.
 3. Set the app name to exactly `mailflare`. Do not rename it. 
@@ -85,7 +85,7 @@ Paste the prompt below into an agent with terminal access. Give it your Cloudfla
 - **Runtime token** (stored as the Worker secret `CF_TOKEN`): use the domain permissions above. Add **Email Sending Edit** to send mail. It must cover the zones you will connect in Mailflare.
 
 ```text
-Install Mailflare from https://github.com/hieunc229/mailflare in my Cloudflare account.
+Install Mailflare from https://github.com/zamansheikh/mailflare in my Cloudflare account.
 Ask me for my Cloudflare account ID, a scoped deployment API token, and a separate
 runtime CF_TOKEN through a secret input. Never print, commit, or place either token
 in a command argument or a tracked file. Use the deployment token only for Wrangler
@@ -187,11 +187,11 @@ Configure the token and repository details in both Cloudflare and GitHub:
 | Cloudflare Worker | `GITHUB_UPDATE_REPO` | Variable | The installation repository in `owner/repository` format |
 | Cloudflare Worker | `GITHUB_UPDATE_REF` | Optional variable | The installation branch to update; omit it to use the repository's default branch |
 | GitHub repository → Actions | `MAILFLARE_UPDATE_TOKEN` | Repository secret | The same fine-grained personal access token |
-| GitHub repository → Actions | `UPDATE_SOURCE_REPOSITORY` | Optional repository variable | The upstream repository; defaults to `hieunc229/mailflare` |
+| GitHub repository → Actions | `UPDATE_SOURCE_REPOSITORY` | Optional repository variable | The upstream repository; defaults to `zamansheikh/mailflare` |
 
 The same token can be used for `GITHUB_UPDATE_TOKEN` and `MAILFLARE_UPDATE_TOKEN` when it has all three permissions above. Keep both values secret and limit the token's repository access to the installation repository.
 
-Make sure `.github/workflows/deploy-update.yml` exists on the installation branch. If it is missing, create the file and copy its contents from the [canonical Mailflare update workflow](https://github.com/hieunc229/mailflare/blob/main/.github/workflows/deploy-update.yml). If an older installation has a different updater, replace it with the latest canonical workflow once. A running workflow cannot create or replace itself until the current workflow has been installed manually.
+Make sure `.github/workflows/deploy-update.yml` exists on the installation branch. If it is missing, create the file and copy its contents from the [canonical Mailflare update workflow](https://github.com/zamansheikh/mailflare/blob/main/.github/workflows/deploy-update.yml). If an older installation has a different updater, replace it with the latest canonical workflow once. A running workflow cannot create or replace itself until the current workflow has been installed manually.
 
 After the GitHub Action completes successfully, wait for the connected Cloudflare deployment to finish before refreshing Mailflare or applying pending database migrations. The workflow updates the repository first; the new application version is not live until Cloudflare completes its deployment.
 
@@ -205,6 +205,6 @@ New application releases must remain compatible with the previous schema until a
 
 When adding a schema change, create a new uniquely named SQL file in `drizzle/migrations` and do not edit an applied migration. Build and development commands generate the Worker migration bundle from those files. `npm run db:bundle` can generate it explicitly.
 
-## Branding license
+## Licensing
 
-Activate a purchased Pro or Team key from **Admin → Licenses**. Mailflare sends the key to Paymug and stores only a one-way hash and the activation state. Apply all D1 migrations before activating a license.
+This fork has no paid tiers. Every installation has the Team features: custom branding, unlimited accounts, shared mailboxes and account-level forwarding. There is no license key to activate and nothing is sent to a license server.

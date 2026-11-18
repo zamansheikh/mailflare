@@ -13,7 +13,7 @@ jobs:
     # Update Mailflare copies .github/workflows into every installation
     # repository; this keeps the checks from running (and using Actions
     # minutes) there.
-    if: github.repository == 'hieunc229/mailflare'
+    if: github.repository == 'zamansheikh/mailflare'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
